@@ -1,0 +1,38 @@
+# Project information
+site_name: "Introduction to human PopGen"
+site_author: Vladimir Bajić
+
+
+# Theme
+theme: 
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - bash
+        - R
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+# Pages  
+nav:
+    - Home:                     index.md
+    - Background:               01_background.md
+    - Exercise dataset:         02_data.md
+    - Plink:                    03_plink.md
+    - Multivariate analysis:    04_MDS_and_PCA.md
+    - Admixture:                05_admixture.md
+    - Reference:                06_reference.md
+
+
