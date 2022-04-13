@@ -2,12 +2,18 @@
 
 For this exercise we are going to work with [HGDP-CEPH Dataset 11](http://www.cephb.fr/en/hgdp_panel.php) submitted by Harvard Genetic Department.
 
+<center>
+![HGDP](https://upload.wikimedia.org/wikipedia/commons/a/a9/Worldwide_human_populations_-_frappe_results.png){width=70%}
+</center>
+
 This dataset contains SNPs from different human populations across the globe. The aim of this exercise is to get familiar with a few widely used analyses in human popgen as well as to understand  genetic variation in human populations. The dataset we chose is genotyped on the Affymetrix Axiom Human Origins Array which was designed to reduce problems of [ascertainment bias](https://www.ncbi.nlm.nih.gov/books/NBK9792/). Effect of the ascertainment bias has been documented for most of the commercially available SNP array platform. 
 
-_In the figure below each line represents a chromosome, and each dot represents a variant. The usage on population 2 of a set of markers optimized to detect the genetic diversity of population 1 (B) underestimates the higher diversity of population 2 (A)._ [Taken from Luca Pagani Research gate](https://www.researchgate.net/publication/303388742_Through_the_layers_of_the_Ethiopian_genome_a_survey_of_human_genetic_variation_based_on_genome-wide_genotyping_and_re-sequencing_data/figures?lo=1)
+_In the figure below each line represents a chromosome, and each dot represents a variant. The usage on population 2 of a set of markers optimized to detect the genetic diversity of population 1 (B) underestimates the higher diversity of population 2 (A)._ 
 
 <center>
-![Ascertainment bias](C:\Users/Vladimir Bajic/Documents/Nowick_Lab/Master_course_Bioinformatics_for_Biologists/SoSe2020/popge_intro/figures_for_html/Effect-of-the-ascertainment-bias-documented-for-most-of-the-commercially-available-SNP_W640.jpg){width=70%}
+![Ascertainment bias](https://www.researchgate.net/profile/Luca-Pagani/publication/303388742/figure/fig1/AS:614371868811287@1523489076589/Effect-of-the-ascertainment-bias-documented-for-most-of-the-commercially-available-SNP_W640.jpg){width=70%}
+
+Figure taken from [Luca Pagani Research gate](https://www.researchgate.net/publication/303388742_Through_the_layers_of_the_Ethiopian_genome_a_survey_of_human_genetic_variation_based_on_genome-wide_genotyping_and_re-sequencing_data/figures?lo=1)
 </center>
 
 *********************************************************************
@@ -34,39 +40,31 @@ All the data that we need for the exercises are located here:
 `/opt/evop/public/BIOINFORMATICS/popgen_intro/`
 
 We will copy them to our home directory instead of downloading them so we can save some time.
-```{bash, eval=F, echo=T}
+``` bash
 mkdir ~/popgen_intro
 cd /opt/evop/public/BIOINFORMATICS/popgen_intro/
 cp -r HGDP_metainformation.txt Harvard_HGDP-CEPH/all_snp.* Harvard_HGDP-CEPH/sample_all_snp.txt ~/popgen_intro/
 cd ~/popgen_intro
 ```
 
+If you would like to download it yourself, you can do it like this:<br />
+`wget ftp://ftp.cephb.fr/hgdp_supp10/*`
 
+A **tarball** is a group of files that are kept together using the `tar` command. Tarballs are common file formats on Linux operating systems, and they are often used for distribution of software/media or backup purposes. Typically they have `.tar` extension, while compressed `.tar` files have `.tgz` or `.tar.gz` extension.
 
-
-We can download the dataset like this:
-```{bash, eval=F, echo=T}
-mkdir ~/popgen_intro
-cd ~/popgen_intro
-wget ftp://ftp.cephb.fr/hgdp_supp10/*
-```
-
-A tarball is a group of files that are kept together using the `tar` command. Tarballs are common file formats on Linux operating systems, and they are often used for distribution of software/media or backup purposes. Typically they have `.tar` extension, while compressed `.tar` files have `.tgz` or `.tar.gz` extension.
-
-```{bash, eval=F, echo=T}
+``` bash
 tar -xzvf Harvard_HGDP-CEPH.tgz
 ```
 
-`Harvard_HGDP-CEPH` directory which contains several files explained in `8_12_2011_Harvard_HGDP_readme.txt`. 
+`Harvard_HGDP-CEPH` directory contains several files explained in `8_12_2011_Harvard_HGDP_readme.txt`. 
 
-in `Harvard_HGDP-CEPH`  we can find several files:<br />
-`all_snp.ped`<br />
-`all_snp.map`<br />
+- `all_snp.ped` and `all_snp.map`<br />
+  are in the `plink` format (used by software such as `ADMIXTURE`, `TreeMix`, and many others). These two files are _"connected"_ and they should be always processed together. So be sure that you keep them in the same directory and that they have the same name with only difference in their file extension name.
 
-These files are in the `plink` format (used by software such as `ADMIXTURE`, `TreeMix`, and many others). These two files are "connected" and they should be always processed together. So be sure that you keep them in the same directory and that they have the same name with only difference in their file extension name.
+- `sample_all_snp.txt`<br /> 
+  contains a list of individuals their sex and populations to which they belong.
 
-`sample_all_snp.txt`<br /> contains a list of individuals their sex and populations to which they belong<br />
-
-`HGDP_metainformation.txt` is a file in which I collected the meta-information on each of the samples which might be useful for population genetic research, data interpretation, and/or data visualization (e.g. country or origin, longitude, latitude, language...).<br />
+- `HGDP_metainformation.txt` 
+  is a file in which I collected the meta-information on each of the samples which might be useful for population genetic research, data interpretation, and/or data visualization (e.g. country or origin, longitude, latitude, language...).
 
 For all data manipulation, such as extracting certain SNPs, chromosomes, individuals, merging datasets, removing SNPs in high LD, filtering out low quality genotypes, and many others we will use [plink](https://www.cog-genomics.org/plink2).
