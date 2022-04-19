@@ -35,4 +35,5 @@ nav:
     - Admixture:                05_admixture.md
     - Reference:                06_reference.md
 
-
+plugins:
+    - mkdocs-video

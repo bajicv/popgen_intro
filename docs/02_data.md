@@ -6,9 +6,37 @@ For this exercise we are going to work with [HGDP-CEPH Dataset 11](http://www.ce
 ![HGDP](https://upload.wikimedia.org/wikipedia/commons/a/a9/Worldwide_human_populations_-_frappe_results.png){width=70%}
 </center>
 
-This dataset contains SNPs from different human populations across the globe. The aim of this exercise is to get familiar with a few widely used analyses in human popgen as well as to understand  genetic variation in human populations. The dataset we chose is genotyped on the Affymetrix Axiom Human Origins Array which was designed to reduce problems of [ascertainment bias](https://www.ncbi.nlm.nih.gov/books/NBK9792/). Effect of the ascertainment bias has been documented for most of the commercially available SNP array platform. 
+This dataset contains SNPs from different human populations across the globe. The aim of this exercise is to get familiar with a few widely used analyses in human popgen as well as to understand  genetic variation in human populations. The dataset we chose is genotyped on the Affymetrix Axiom Human Origins Array which was designed to reduce problems of [ascertainment bias](https://www.ncbi.nlm.nih.gov/books/NBK9792/). 
 
-_In the figure below each line represents a chromosome, and each dot represents a variant. The usage on population 2 of a set of markers optimized to detect the genetic diversity of population 1 (B) underestimates the higher diversity of population 2 (A)._ 
+
+
+*********************************************************************
+
+# SNP arrays
+[SNP array](https://en.wikipedia.org/wiki/SNP_array) is a type of DNA microarray containing designed probes harboring the SNP positions, which is hybridized with fragmented DNA to determine the specific alleles of all SNPs on the array for the hybridized DNA sample. 
+SNP arrays can be used to detect polymorphisms within a population. 
+
+In order to create a SNP array it is necessary to know where are the variable sites in the human genome. This knowledge comes from several big projects that sequenced entire human genomes from different human populations (e.g. HapMap, 1K Genome Project, HGDP, etc.) . Once SNPs and sequences around them were known it was possible to design SNP arrays that would capture only positions in which humans from each other. This reduces the costs of sequencing entire human genomes and it allows us to look into more individuals. 
+
+Many companies nowadays offer different genomewide SNP chips. Here we will get familiar with Illumina microarray technology (also known as BeadArray technology) which uses silica microbeads. On the surface of each array, or BeadChip, hundreds of thousands to millions of genotypes for a single individual can be assayed at once. These tiny silica beads are housed in carefully etched microwells and coated with multiple copies of an oligonucleotide probe targeting a specific locus in the genome.
+
+![Illumina beads](https://www.illumina.com/content/dam/illumina-marketing/images/science/v2/web-graphic/multi-sample-array-formats-web-graphic.jpg)
+
+As DNA fragments pass over the BeadChip, each probe binds to a complementary sequence in the sample DNA, stopping one base before the locus of interest. Allele specificity is conferred by a single base extension that incorporates one of four labeled nucleotides. When excited by a laser, the nucleotide label emits a signal. The intensity of that signal conveys information about the allelic ratio at that locus.
+
+![Illumina genotypes](https://www.illumina.com/content/dam/illumina-marketing/images/technology/microarray/how-microarrays-work-web-graphic.jpg)
+
+
+To understand better how SNP arrays work watch this video. 
+![type:video](https://www.youtube.com/embed/lVG04dAAyvY)
+
+# Ascertainment bias
+
+Although the SNP chips described above have been widely used in human population genetics studies, this was not what they were designed for. The SNP arrays are a useful tool for studying slight variations between whole genomes, and their most important clinical applications are for determining disease susceptibility and for measuring the efficacy of drug therapies designed specifically for individuals. In research, SNP arrays are most frequently used for genome-wide association studies.
+
+The ascertainment and choice of the SNPs included in a given SNP chip are often poorly documented. Using SNPs known from one population to study another population is not ideal for population studies as it could omit numerous SNPs that could exist in the second population that was not taken into account when the SNP chip was created. Effect of the __ascertainment bias__ has been documented for most of the commercially available SNP array platforms. 
+
+_In the figure below each line represents a chromosome, and each dot represents a variant. Using a set of markers optimized to detect the genetic diversity of population 1 (B) on population 2 underestimates the higher diversity of population 2 (A)._ 
 
 <center>
 ![Ascertainment bias](https://www.researchgate.net/profile/Luca-Pagani/publication/303388742/figure/fig1/AS:614371868811287@1523489076589/Effect-of-the-ascertainment-bias-documented-for-most-of-the-commercially-available-SNP_W640.jpg){width=70%}
@@ -16,13 +44,9 @@ _In the figure below each line represents a chromosome, and each dot represents 
 Figure taken from [Luca Pagani Research gate](https://www.researchgate.net/publication/303388742_Through_the_layers_of_the_Ethiopian_genome_a_survey_of_human_genetic_variation_based_on_genome-wide_genotyping_and_re-sequencing_data/figures?lo=1)
 </center>
 
-*********************************************************************
-
 ## Affymetrix Axiom Human Origins Array
 
-Although the __SNP arrays__ have been widely used in human population genetics studies, this was not what they were designed for. The SNP arrays are a useful tool for studying slight variations between whole genomes, and their most important clinical applications are for determining disease susceptibility and for measuring the efficacy of drug therapies designed specifically for individuals. In research, SNP arrays are most frequently used for genome-wide association studies.
-
-The ascertainment and choice of the SNPs are not well documented, and the tagging design is not ideal for population studies (__ascertainment bias__). To address this problem, the __Affymetrix Axiom Human Origins Array__ has been designed. This analyzes ~630,000 SNPs ascertained by resequencing in 13 population-specific panels, including San, Yoruba, Mbuti Pygmy, French, Sardinian, Han, Cambodian, Mongolian, Karitiana, Papuan, and Bougainville populations from the CEPH-HGDP panel, as well as variants identified from the Neanderthal Genome Project. The array also contains 87,000 SNPs that include sets from mtDNA and the Y chromosome, and variants from standard chips for data comparison purposes.
+To address ascertainment bias problem, the Affymetrix Axiom™ Human Origins Array has been designed. This analyzes ~630,000 SNPs ascertained by resequencing in 13 population-specific panels, including San, Yoruba, Mbuti Pygmy, French, Sardinian, Han, Cambodian, Mongolian, Karitiana, Papuan, and Bougainville populations from the CEPH-HGDP panel (Box 10.2), as well as variants identified from the Neanderthal Genome Project. The array also contains 87,000 SNPs that include sets from mtDNA and the Y chromosome, and variants from standard chips for data comparison purposes.
 
 Dataset 11 contains __629,443 SNPs__ that were obtained by genotyping __934 unrelated HGDP-CEPH individuals__ with Affymetrix Axiom Human Origins Array Plate, and merging the genotypes with data from _Neandertal_, _Denisova_ and _chimpanzee_. 
 

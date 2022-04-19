@@ -14,4 +14,6 @@ And various other sources:
 - https://www.sciencedirect.com/science/article/pii/S0002929714004273 
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4001853/
 - https://github.com/GELOG/adam-ibs/wiki/Plink-IBS-MDS-Tutorial 
+- https://www.illumina.com/science/technology/microarray.html
+- https://www.youtube.com/watch?v=lVG04dAAyvY&ab_channel=Illumina
 - Marees, Andries T., et al. "A tutorial on conducting genome-wide association studies: Quality control and statistical analysis." International journal of methods in psychiatric research 27.2 (2018): e1608.

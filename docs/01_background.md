@@ -32,6 +32,7 @@ Such studies already have a long history, and a pragmatic answer to this questio
 
 It is difficult to give general answers to many of the ethical questions that diversity studies raise; indeed, the possibility of ever more comprehensive genetic studies is one of the driving forces in the field of medical ethics. Answers may emerge more satisfactorily through the consideration of individual cases than through prior reasoning based on principles.
 
+*********************************************************************
 
 ##  _Who should be studied?_
 

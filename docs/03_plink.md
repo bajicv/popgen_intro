@@ -15,7 +15,7 @@ We will be working with `plink`, a free, open-source whole-genome association an
 
 Because reading large text files can be time-consuming, it is recommended to use binary files. 
 
-![plink data formats (Marees et al. 2017)](C:\Users/Vladimir Bajic/Documents/Nowick_Lab/Master_course_Bioinformatics_for_Biologists/SoSe2020/popge_intro/figures_for_html/PLINK-files.png){width=100%}
+![plink data formats (Marees et al. 2017)](https://www.researchgate.net/publication/323424714/figure/fig3/AS:667766705098757@1536219397189/Overview-of-various-commonly-used-PLINK-files-SNP-single-nucleotide-polymorphism_W640.jpg){width=80%}
 
 *********************************************************************
 
