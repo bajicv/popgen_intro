@@ -23,4 +23,5 @@ And various other sources:
 - https://www.nature.com/articles/s41586-021-04008-x
 - https://www.nature.com/articles/d41586-021-03542-y
 - https://www.nature.com/articles/s10038-020-00862-1
+- https://www.ncbi.nlm.nih.gov/snp/
 - Marees, Andries T., et al. "A tutorial on conducting genome-wide association studies: Quality control and statistical analysis." International journal of methods in psychiatric research 27.2 (2018): e1608.

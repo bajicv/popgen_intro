@@ -24,10 +24,13 @@ Such studies already have a long history, and a pragmatic answer to this questio
 
 <center>
 ![races vs reality](https://i0.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2017/04/Fig1-raceConception-2.png){width=60%}
+
+_"Race" cannot be biologically defined due to genetic variation among human individuals and populations._ 
+<br />_**A)** The old concept of the "five races:" African, Asian, European, Native American, and Oceanian. According to this view, variation between the races is large, and thus, the each race is a separate category. Additionally, individual races are thought to have a relatively uniform genetic identity._ 
+<br />_**B)** Actual genetic variation in humans. Human populations do roughly cluster into geographical regions. However, variation between different regions is small, thus blurring the lines between populations. Furthermore, variation within a single region is large, and there is no uniform identity 
+<br />(See [source blog](https://sitn.hms.harvard.edu/flash/2017/science-genetics-reshaping-race-debate-21st-century/) for more information)._
+
 </center>
-
-"Race" cannot be biologically defined due to genetic variation among human individuals and populations. (A) The old concept of the "five races:" African, Asian, European, Native American, and Oceanian. According to this view, variation between the races is large, and thus, the each race is a separate category. Additionally, individual races are thought to have a relatively uniform genetic identity. (B) Actual genetic variation in humans. Human populations do roughly cluster into geographical regions. However, variation between different regions is small, thus blurring the lines between populations. Furthermore, variation within a single region is large, and there is no uniform identity (See [source blog](https://sitn.hms.harvard.edu/flash/2017/science-genetics-reshaping-race-debate-21st-century/) for more information).
-
 
 !!! tip "Benefits from genetic diversity studies"
     * Increased understanding of genetic history and relationships 
