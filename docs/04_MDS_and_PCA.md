@@ -3,7 +3,7 @@
 _How can we display a set of pairwise genetic distances in a comprehensible manner?_ 
 If we have n populations, we require n dimensions to fully display their pairwise genetic distances on a graph. However, we often have more than four populations or molecules that we want to compare, yet we cannot conceive of, or represent, the four or more dimensions required to display these data. __Multivariate analyses__ allow us to reduce these multiple dimensions to the two or three dimensions we can draw and comprehend, while minimizing the inevitable loss of information. 
 
-![How many dimensions are needed to display population relationships?](C:\Users/Vladimir Bajic/Documents/Nowick_Lab/Master_course_Bioinformatics_for_Biologists/SoSe2020/popge_intro/figures_for_html/mds_example.jpg){width=100%}
+![How many dimensions are needed to display population relationships?](/pics/multivariate_analyses.jpeg){width=100%}
 
 Figure from [Jobling et al. 2014](https://www.amazon.com/Human-Evolutionary-Genetics-Mark-Jobling/dp/081534148)
 
@@ -13,6 +13,7 @@ Distance matrices are shown relating genetic distances between increasing number
 ****************************************************************************************************
 
 ## MDS
+
 __Multi-dimensional scaling (MDS)__ is one of these methods, where the loss of information is represented as a __stress statistic__, with the lower the stress statistic, the better the MDS fit to the data and therefore the less information lost. 
 
 We can use plink to construct MDS for `.genome` file that we created
@@ -89,7 +90,7 @@ PCA is also used to display genetic distances between a __set of individuals__, 
 
 For the plots of genome-wide data, the first two PCs are normally shown, but any two PCs can be plotted to search for useful information. It should be remembered that, for genome-wide analysis, although the first two PCs will represent the largest amount of variation of all PCs, they may still represent a small amount of the total variation in the dataset. Principal components can also be rotated, a statistical procedure that is sometimes used to emphasize the relationship between the genetic structure and geography.
 
-![Population structure within Europe](C:\Users/Vladimir Bajic/Documents/Nowick_Lab/Master_course_Bioinformatics_for_Biologists/SoSe2020/popge_intro/figures_for_html/PCA_Europe.jpg){width=100%}
+![Population structure within Europe](/pics/PCA.jpeg){width=100%}
 
 Population structure within Europe revealed by genome-wide SNPs. Principal component analysis of data on 197,146 SNPs in 1387 Europeans. Small colored labels represent individuals and large colored points represent median PC1 and PC2 values for each country. The inset map provides a key to the labels. The PC axes are rotated to emphasize the similarity to the geographic map of Europe (from [Novembre J et al. 2008](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735096/)).
 
@@ -178,48 +179,40 @@ Do you notice any outliers? Let's check other PCA's and figure out which individ
 As this is well established dataset, there is already indication in `~/popgen_intro/sample_all_snp.txt`
 
 
-<div class="alert alert-warning">
-  <strong>HOMEWORK:</strong> 
-  
-  *****
-  Make a new PCA after removing the outliers.
+!!! warning "Homework"
+    Make a new PCA after removing the outliers.
 
-  1. Make file with individuals to be removed;
-     
-  2. Use this file to subset your original file;
-     
-  3. Run PCA on new file that doesn't contain outlier individuals; 
-     
-  4. Visualize PCA in R.
-  
-  <br />Do you see any differences?
-  
-  *****************
-  
-  <details>
-  <summary><strong>Click for Answer</strong></summary>
-  <br />1. Make file with individuals to be removed;
-     
-```{bash, eval=F, echo=T}
-cd ~/popgen_intro/plink_exercise
-grep discover ~/popgen_intro/sample_all_snp.txt > ind_exclude_tmp.txt
-join -j 1 -o 2.2,1.1 <(sort -k1 ind_exclude.txt) <(sort -k1 ../HGDP_metainformation.txt) > ind_exclude.txt
-```
-     
-  <br />2. Use this file to subset your original file;
-     
-```{bash, eval=F, echo=T}
-plink1.9 --bfile hgdp_newFIDs_modernPops_MindGeno --remove ind_exclude.txt --make-bed --out hgdp_outliers_removed
-```
-     
-  <br />3. Run PCA on new file that doesn't contain outlier individuals; 
-     
-```{bash, eval=F, echo=T}
-plink1.9 --bfile hgdp_outliers_removed --pca --out hgdp_outliers_removed_PCA
-```
-     
-  <br />4. Download necessary ouput files to your local machine and visualize PCA in R using the script abowe. Don't forget to exchange input files for `eigenval` and `eigenvec`.
-  
-  </details> 
+    1. Make file with individuals to be removed;
+      
+    2. Use this file to subset your original file;
+      
+    3. Run PCA on new file that doesn't contain outlier individuals; 
+      
+    4. Visualize PCA in R.
+    
+    _Do you see any differences?_
 
-</div>
+    *****************
+
+    ??? warning "Click for Answer"
+        <br />1. Make file with individuals to be removed;
+      
+        ``` bash
+        cd ~/popgen_intro/plink_exercise
+        grep discover ~/popgen_intro/sample_all_snp.txt > ind_exclude_tmp.txt
+        join -j 1 -o 2.2,1.1 <(sort -k1 ind_exclude.txt) <(sort -k1 ../HGDP_metainformation.txt) > ind_exclude.txt
+        ```
+            
+        <br />2. Use this file to subset your original file;
+            
+        ``` bash
+        plink1.9 --bfile hgdp_newFIDs_modernPops_MindGeno --remove ind_exclude.txt --make-bed --out hgdp_outliers_removed
+        ```
+            
+        <br />3. Run PCA on new file that doesn't contain outlier individuals; 
+            
+        ``` bash
+        plink1.9 --bfile hgdp_outliers_removed --pca --out hgdp_outliers_removed_PCA
+        ```
+            
+        <br />4. Download necessary ouput files to your local machine and visualize PCA in R using the script abowe. Don't forget to exchange input files for `eigenval` and `eigenvec`.

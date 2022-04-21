@@ -1,26 +1,46 @@
 # Studying Human Diversity
 
-Studying human diversity raises important ethical and methodological questions, and we will only mention some of them. Observations and inquiries in the area of human diversity are probably as old as humanity, and have in the past been linked to both blatant and subtle forms of __racism__.
+Studying human diversity raises important ethical and methodological questions, and we will only mention some of them. Observations and inquiries in the area of human diversity are probably as old as humanity and have been and are still linked to both blatant and subtle forms of __racism__.
+
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A new study of DNA recovered from an ancient Philistine site in the Israeli city of Ashkelon confirms what we know from the Bible – that the origin of the Philistines is in southern Europe. <a href="https://t.co/bwmcPax9Jp">https://t.co/bwmcPax9Jp</a></p>&mdash; Benjamin Netanyahu (@netanyahu) <a href="https://twitter.com/netanyahu/status/1147824702360100864?ref_src=twsrc%5Etfw">July 7, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[*When Ancient DNA Gets Politicized*](https://www.smithsonianmag.com/history/when-ancient-dna-gets-politicized-180972639/)
+
+</center>
+
+!!! note "For curious"
+    Read more about [Debate on ‘Race’ and Genomics](https://scijust.ucsc.edu/2019/05/30/developing-debate-on-race-and-genomics/)
+
+*********************************************************************
 
 ## _Should we study human genetic diversity?_
 
 _Should we study human genetic diversity at all, or is this an area of work where the potential for misuse outweighs the potential benefits to such an extent that it should not be pursued?_
 
+![Human Diversity ](https://www.pcrm.org/sites/default/files/diverse-people.jpg)
+
 Such studies already have a long history, and a pragmatic answer to this question is that information on human genetic diversity is needed, and is therefore generated, for __medical__ and __forensic__ applications, and thus is already available whatever evolutionary geneticists decide to do, so we must be ready to consider its implications and consequences. Furthermore, genetic information, in fact, refutes any scientific basis for racism as the existence of discrete human groups. Most human genetic variation is found __within__ any individual population, except for a few loci affected by natural selection. It can therefore be used to argue that racism-the belief that discrimination between apparent groups is justifiable-is an entirely __social construct__. In addition, genetic information is of enormous intrinsic interest to many people, not just scientists.
+
+<center>
+![races vs reality](https://i0.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2017/04/Fig1-raceConception-2.png){width=60%}
+</center>
+
+"Race" cannot be biologically defined due to genetic variation among human individuals and populations. (A) The old concept of the "five races:" African, Asian, European, Native American, and Oceanian. According to this view, variation between the races is large, and thus, the each race is a separate category. Additionally, individual races are thought to have a relatively uniform genetic identity. (B) Actual genetic variation in humans. Human populations do roughly cluster into geographical regions. However, variation between different regions is small, thus blurring the lines between populations. Furthermore, variation within a single region is large, and there is no uniform identity (See [source blog](https://sitn.hms.harvard.edu/flash/2017/science-genetics-reshaping-race-debate-21st-century/) for more information).
 
 
 !!! tip "Benefits from genetic diversity studies"
-    * increased understanding of genetic history and relationships; 
+    * Increased understanding of genetic history and relationships 
 
-    * medical advances such as the identification of genes predisposing to disease; 
+    * Medical advances such as the identification of genes predisposing to disease 
 
-    * accurate paternity testing, victim and assailant identification, and other forensic applications; 
+    * Accurate paternity testing, victim and assailant identification, and other forensic applications 
 
-    * sometimes, immediate benefits to the population, such as medical advice or treatment. However, complications also arise, for example because the people who receive most of the long-term benefits may not be the donors.
+    * Immediate benefits to the population, such as medical advice or treatment <br /> _(However the people who receive most of the long-term benefits may not be the donors)_
 
 
 !!! danger "Outstanding issues that have not been fully resolved"
-    * Is informed consent from members of cultures that do not ascribe to Western scientific values truly "informed"? Indeed, can even leading geneticists such as Jim Watson and Craig Venter, who have volunteered to have their whole genomes sequenced and made public, appreciate the full implications when these may only become apparent in the future as research reveals the medical implications of DNA variants?
+    * Is informed consent from members of cultures that do not ascribe to Western scientific values truly _"informed"_? _Indeed, can even leading geneticists such as Jim Watson and Craig Venter, who have volunteered to have their whole genomes sequenced and made public, appreciate the full implications when these may only become apparent in the future as research reveals the medical implications of DNA variants?_
 
     * How much information about the donor should accompany a cell line or DNA sample, so that the privacy of the donor is not infringed?
 
@@ -28,15 +48,21 @@ Such studies already have a long history, and a pragmatic answer to this questio
 
     * Can samples collected for one study be used in another?
 
-    * Can an individual give broad consent for all future studies, which may involve techniques that do not yet exist and have implications that are not currently understood (related to the first point, above)? 
+    * Can an individual give broad consent for all future studies, which may involve techniques that do not yet exist and have implications that are not currently understood? 
 
 It is difficult to give general answers to many of the ethical questions that diversity studies raise; indeed, the possibility of ever more comprehensive genetic studies is one of the driving forces in the field of medical ethics. Answers may emerge more satisfactorily through the consideration of individual cases than through prior reasoning based on principles.
+
+!!! note "For curious: __Ethics of DNA research on human remains__"
+    - [Wagner, Jennifer K., et al. "Fostering responsible research on ancient DNA." The American Journal of Human Genetics 107.2 (2020): 183-195.](https://www.sciencedirect.com/science/article/pii/S0002929720302056?via%3Dihub)
+    - [Alpaslan-Roodenberg, Songül, et al. "Ethics of DNA research on human remains: Five globally applicable guidelines." Nature 599.7883 (2021): 41-46.](https://www.nature.com/articles/s41586-021-04008-x)
+    - [Ancient-DNA researchers write their own rules](https://www.nature.com/articles/d41586-021-03542-y)
+
 
 *********************************************************************
 
 ##  _Who should be studied?_
 
-Sampling always creates problems: is the sample appropriate and representative? If not, conclusions drawn from the sample may not be applicable to the rest of the population that was sampled. Analyzing everyone would avoid the complications introduced by sampling, and some have argued that it is fairer, but at present it is impractical for DNA studies and even for DNA-free genetics based, for example, on phenotypic traits. This is likely to remain true for the foreseeable future, so the issues raised by sampling must be addressed. Although human genetic diversity has been investigated for a long time, the early studies using pre-DNA polymorphisms aroused little controversy or public interest. Attitudes changed with the launch of the __Human Genome Diversity Project (HGDP)__ in 1991, and all subsequent large-scale projects, including the __HapMap__, __Genographic__, and __1000 Genomes Projects__, have been influenced by this legacy.
+Sampling always creates problems: _is the sample appropriate and representative_? If not, conclusions drawn from the sample may not be applicable to the rest of the population that was sampled. Analyzing everyone would avoid the complications introduced by sampling, and some have argued that it is fairer, but at present it is impractical for DNA studies and even for DNA-free genetics based, for example, on phenotypic traits. This is likely to remain true for the foreseeable future, so the issues raised by sampling must be addressed. Although human genetic diversity has been investigated for a long time, the early studies using pre-DNA polymorphisms aroused little controversy or public interest. Attitudes changed with the launch of the __Human Genome Diversity Project (HGDP)__ in 1991, and all subsequent large-scale projects, including the __HapMap__, __Genographic__, and __1000 Genomes Projects__, have been influenced by this legacy.
 
 *********************************************************************
 
@@ -46,49 +72,36 @@ A few large-scale studies of human genetic variation have made major contributio
 
 *********************************************************************
 
-### [HapMap](https://www.ncbi.nlm.nih.gov/probe/docs/projhapmap/) <br />
-The HapMap project was an early effort that provided array genotypes from populations of mainly European, East Asian, and African ancestry (International HapMap Consortium 2005). It allows researchers to find genes and genetic variations that affect health and disease. The original mission statement of the International HapMap Project was to develop a haplotype map of the human genome, HapMap, which would describe the common patterns of human DNA sequence variation. Through this research, millions of SNPs were discovered and many GWAS studies used this dataset in research for disease association. This project was a necessary stepping stone for the 1KG project which utilizes many of the same populations.  While this project was an impactful start for the scientific community, the HapMap Project has lost momentum in research (statement from Buchanan et al. 2012). The number of novel variants is constantly increasing and many believe that the 1000 Genomes Project could potentially overshadow the utility of HapMap.
-
-*********************************************************************
-
-### [The Human Genome Diversity Project (HGDP)](http://www.cephb.fr/en/hgdp_panel.php)<br />
-and the CEPH foundation established a collection of cell lines from a large number of diverse human populations (Cann, et al. 2002), and array genotyping of this collection has resulted in widely used datasets (Jakobsson, et al. 2008; Li, et al. 2008; Patterson, et al. 2012). The HGDP-CEPH collection has several attractive features as a resource for human population genetics. It contains individuals from about 52 different populations, with typically around 20 individuals from each of these. While projects such as HapMap and the 1000 Genomes Project sampled individuals mainly from major continental populations (sampling criteria included being non-vulnerable and relevant to medical-genetic studies), the HGDP sampling encompasses many smaller populations of particular anthropological, linguistic, historical or genetic interest. As a few examples, from Africa, it contains the Khoe-San, believed to represent the earliest branching modern human population, and central African rain forest hunter-gatherers. From Europe, it contains the Basque population, one of the few European groups to speak a language that is not part of the Indo-European family, and the isolated Orkney islanders. From the Middle East and South Asia, it contains the Druze ethno-religious group and the isolated Kalash group from the western Himalayas. From East Asia, it contains several minority ethnic groups from China, including the Turkic speaking Uyghurs from western China. From Oceania, it importantly contains Papua New Guineans. From the Americas, it contains several Native American groups without European admixture, which otherwise is ubiquitous in the majority populations. As the resource consists of cell lines, an unlimited amount of DNA can be obtained. Additionally, while data obtained for population history studies sometimes has restrictions on how it can be used or shared, the policies of the HGDP-CEPH resource is such that all data can be analyzed without restrictions and distributed openly. To date, array genotype and other data generated from this collection have been used in hundreds of population genetics studies.
-
-*********************************************************************
-
-### [Population Reference Sample (PORES)](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000145.v4.p2) <br />
-The POPRES is a resource for population, disease, and pharmacological genetics research. It contains genotype array data on close to 6,000 individuals (Nelson, et al. 2008), with particularly good geographical coverage of Europe; however, its wider usage has been limited as the data are available only under managed access rather than open access. The genotype and demographic data from this reference sample are freely available through the NCBI database of Genotypes and Phenotypes (dbGaP).
-
-*********************************************************************
-
-### [The 1000 Genomes Project (1KGP)](https://www.internationalgenome.org/about) <br />
-The 1KGP released data based on a combination of low-coverage whole-genome and high-coverage exome sequencing data from worldwide human populations, initially from seven populations (1000 Genomes Project Consortium 2010), then 14 populations (1000 Genomes Project Consortium 2012) and finally 26 populations (1000 Genomes Project Consortium 2015).
-
-********************************
-
-The aggregation of data generated in many different studies, particularly large __medical genetics__ studies, has led to the establishment of resources based on data from tens of thousands of individuals.
-
-### [The Genome Aggregation Database (gnomAD)](https://gnomad.broadinstitute.org/)  <br />
-gnomAD is a coalition of investigators seeking to aggregate and harmonize __exome__ and __genome sequencing data__ from a variety of large-scale sequencing projects, and to make summary data available for the wider scientific community. In its first release, which contained exclusively exome data, it was known as the Exome Aggregation Consortium (ExAC) (see Lek, et al. 2016). 
-
-### [The Haplotype Reference Consortium (HRC)](http://www.haplotype-reference-consortium.org/) <br />
-While the donor consents for the constituent studies typically preclude open access to the individual genotypes, these resources enable accurate assessments of allele frequencies and/or high-quality genotype phasing and imputation (see McCarthy, et al. 2016). 
-
-
-********************************
-
-Recently, projects with sampling strategies focused explicitly on __population history__ have provided high-coverage whole-genome sequencing data from very large numbers of diverse populations, but limited to typically 2-4 individuals from each of them.
-
-### [The Simons Genome Diversity Project (SGDP)](https://www.simonsfoundation.org/simons-genome-diversity-project/) <br />
-Complete genome sequences from more than one hundred diverse human populations. The sampling strategy differs from studies of human genome diversity that have aimed to maximize medical relevance by studying populations with large numbers of present-day people. This new study takes a different approach by sampling populations in a way that represents as much anthropological, linguistic and cultural diversity as possible, and thus includes many deeply divergent human populations that are not well represented in other datasets. All genomes in the dataset were sequenced to at least 30x coverage using Illumina technology.
-
-### [The Estonian Biocentre Human Genome Diversity Panel (EGDP)](www.ebc.ee/free_data) <br />
-represents a dataset of 483 individuals from 148 populations worldwide, including 379 new genomes from 125 populations, which we group into Diversity and Selection Sets (Pagani, et al. 2016).
+| Project                                                                                                                                                    | Description                                                                                                                                                                                                                                      |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Human Genome Project (HGP)](https://www.genome.gov/human-genome-project)                                                                                  | The Initial sequencing program of the human genome                                                                                                                                                                                               |
+| [International HapMap Project](https://www.genome.gov/10001688/international-hapmap-project)                                                               | Study of the common pattern of human genetic variation using SNP array                                                                                                                                                                           |
+| [1000 Genomes Project (1KGP)](https://www.internationalgenome.org)                                                                                         | Determining the human genetic variation by means of whole-genome sequencing in population scale                                                                                                                                                  |
+| [Human Genome Diversity Project (HGDP)](https://www.hagsc.org/hgdp/)                                                                                       | Biological samples and genetic data collection from different population groups throughout the world                                                                                                                                             |
+| [Simon Genome Diversity Project (SGDP)](https://docs.cancergenomicscloud.org/v1.0/docs/simons-genome-diversity-project-sgdp-dataset)                       | Whole-genome sequencing project of diverse human populations                                                                                                                                                                                     |
+| [Genome Asia 100k (GA100K)](https://genomeasia100k.org/)                                                                                                   | WGS-based genome study of people in South and East Asia                                                                                                                                                                                          |
+| [UK Biobank (UKB)](https://www.ukbiobank.ac.uk)                                                                                                            | Biobank study involving 500,000 residents in the UK                                                                                                                                                                                              |
+| [Genomics England](https://www.genomicsengland.co.uk/)                                                                                                     | WGS-based genome study of patient with rare disease and their families and cancer patients in England                                                                                                                                            |
+| [FinnGen](https://www.finngen.fi/en)                                                                                                                       | Nationwide biobank and genome cohort study in Finland                                                                                                                                                                                            |
+| [Tohoku Medical Megabank Project ](https://www.megabank.tohoku.ac.jp/english)                                                                              | Biobank and genome cohort study for local area (north-east region) in Japan                                                                                                                                                                      |
+| [Biobank Japan](https://biobankjp.org/english/index.html)                                                                                                  | Nationwide patient-based biobank and genome cohort study in Japan                                                                                                                                                                                |
+| [Trans-Omics for Precision Medicine (TOPMed)](https://www.nhlbiwgs.org)                                                                                    | A genomic medicine research project to perform omics analysis pre-existing cohort samples                                                                                                                                                        |
+| [BioMe Biobank](https://icahn.mssm.edu/research/ipm/programs/biome-biobank)                                                                                | Electronic health record-linked biobank of patients from the Mount Sinai Healthcare System                                                                                                                                                       |
+| [Michigan Genomics Initiative](https://precisionhealth.umich.edu/our-research/michigangenomics/)                                                           | Electronic health record-linked biobank of patients from the University of Michigan Health System                                                                                                                                                |
+| [BioVU](https://victr.vumc.org/biovu-description/)                                                                                                         | Repository of DNA samples and genetic information in Vanderbilt University Medical Center                                                                                                                                                        |
+| [DiscovEHR](http://www.discovehrshare.com/)                                                                                                                | Electronic health record-linked genome study of participants in Geisinger’s MyCode Community Health Initiative                                                                                                                                   |
+| [eMERGE](https://www.genome.gov/Funded-Programs-Projects/Electronic-Medical-Records-and-Genomics-Network-eMERGE)                                           | Consortium of biorepositories with electronic medical record systems and genomic information                                                                                                                                                     |
+| [Kaiser Permanente Research Bank](https://researchbank.kaiserpermanente.org/)                                                                              | Nationwide biobank collecting genetic information from a blood sample, medical record information, and survey data on lifestyle from seven areas of US                                                                                           |
+| [Million Veteran Program](https://www.research.va.gov/mvp/)                                                                                                | Genome cohort study and biobank of participants of the Department of Veterans Affairs (VA) health care system                                                                                                                                    |
+| [CARTaGENE](https://www.cartagene.qc.ca/en/home)                                                                                                           | Biobank study of 43,000 Québec residents                                                                                                                                                                                                         |
+| [lifelines](https://www.lifelines.nl/)                                                                                                                     | Multigenerational cohort study that includes over 167,000 participants from the northern population of the Netherlands                                                                                                                           |
+| [Taiwan Biobank](https://www.twbiobank.org.tw/test_en/index.php)                                                                                           | Nationwide biobank and genome cohort study of residents in Taiwan                                                                                                                                                                                |
+| [China Kadoorie Biobank](https://www.ckbiobank.org/site/)                                                                                                  | Genome cohort study of patients with chronic diseases in China                                                                                                                                                                                   |
+| [Population Reference Sample (PORES)](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000145.v4.p2)                                | Resource for population, disease, and pharmacological genetics research containing genotype array data on close to 6,000 individuals                                                                                                             |
+| [The Genome Aggregation Database (gnomAD)](https://gnomad.broadinstitute.org/)                                                                             | International resource developed with the goal of aggregating and harmonizing both exome and genome sequencing data from a wide variety of large-scale sequencing projects, and making summary data available for the wider scientific community |
+| [The Haplotype Reference Consortium (HRC)](http://www.haplotype-reference-consortium.org/)                                                                 | Provides a large reference panel of human haplotypes by combining together sequencing data from multiple cohorts                                                                                                                                 |
+| [The Estonian Biocentre Human Genome Diversity Panel (EGDP)](https://evolbio.ut.ee/CGgenomes.html)                                                         | Provides a dataset of individuals from hundreds of diverse worldwide populations                                                                                                                                                                 |
+| [Allen Ancient DNA Resource (AADR)](https://reich.hms.harvard.edu/allen-ancient-dna-resource-aadr-downloadable-genotypes-present-day-and-ancient-dna-data) | Provide a uniformly curated dataset of genotypes for thousands of ancient and present-day individuals that can be useful for scientists interested in carrying out analyses of population history and natural selection.                         |
 
 
-
-
-
-
-
-
+Modified Table from: [Practical guide for managing large-scale human genome data in research](https://www.nature.com/articles/s10038-020-00862-1)

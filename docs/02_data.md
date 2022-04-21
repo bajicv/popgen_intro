@@ -13,6 +13,9 @@ This dataset contains SNPs from different human populations across the globe. Th
 *********************************************************************
 
 # SNP arrays
+
+![type:video](https://www.youtube.com/embed/lVG04dAAyvY)
+
 [SNP array](https://en.wikipedia.org/wiki/SNP_array) is a type of DNA microarray containing designed probes harboring the SNP positions, which is hybridized with fragmented DNA to determine the specific alleles of all SNPs on the array for the hybridized DNA sample. 
 SNP arrays can be used to detect polymorphisms within a population. 
 
@@ -27,8 +30,9 @@ As DNA fragments pass over the BeadChip, each probe binds to a complementary seq
 ![Illumina genotypes](https://www.illumina.com/content/dam/illumina-marketing/images/technology/microarray/how-microarrays-work-web-graphic.jpg)
 
 
-To understand better how SNP arrays work watch this video. 
-![type:video](https://www.youtube.com/embed/lVG04dAAyvY)
+
+
+*********************************************************************
 
 # Ascertainment bias
 
@@ -44,7 +48,9 @@ _In the figure below each line represents a chromosome, and each dot represents 
 Figure taken from [Luca Pagani Research gate](https://www.researchgate.net/publication/303388742_Through_the_layers_of_the_Ethiopian_genome_a_survey_of_human_genetic_variation_based_on_genome-wide_genotyping_and_re-sequencing_data/figures?lo=1)
 </center>
 
-## Affymetrix Axiom Human Origins Array
+*********************************************************************
+
+# Affymetrix Axiom Human Origins Array
 
 To address ascertainment bias problem, the Affymetrix Axiom™ Human Origins Array has been designed. This analyzes ~630,000 SNPs ascertained by resequencing in 13 population-specific panels, including San, Yoruba, Mbuti Pygmy, French, Sardinian, Han, Cambodian, Mongolian, Karitiana, Papuan, and Bougainville populations from the CEPH-HGDP panel (Box 10.2), as well as variants identified from the Neanderthal Genome Project. The array also contains 87,000 SNPs that include sets from mtDNA and the Y chromosome, and variants from standard chips for data comparison purposes.
 
@@ -71,15 +77,6 @@ cp -r HGDP_metainformation.txt Harvard_HGDP-CEPH/all_snp.* Harvard_HGDP-CEPH/sam
 cd ~/popgen_intro
 ```
 
-If you would like to download it yourself, you can do it like this:<br />
-`wget ftp://ftp.cephb.fr/hgdp_supp10/*`
-
-A **tarball** is a group of files that are kept together using the `tar` command. Tarballs are common file formats on Linux operating systems, and they are often used for distribution of software/media or backup purposes. Typically they have `.tar` extension, while compressed `.tar` files have `.tgz` or `.tar.gz` extension.
-
-``` bash
-tar -xzvf Harvard_HGDP-CEPH.tgz
-```
-
 `Harvard_HGDP-CEPH` directory contains several files explained in `8_12_2011_Harvard_HGDP_readme.txt`. 
 
 - `all_snp.ped` and `all_snp.map`<br />
@@ -90,5 +87,17 @@ tar -xzvf Harvard_HGDP-CEPH.tgz
 
 - `HGDP_metainformation.txt` 
   is a file in which I collected the meta-information on each of the samples which might be useful for population genetic research, data interpretation, and/or data visualization (e.g. country or origin, longitude, latitude, language...).
+
+!!! note
+
+    If you would like to download it yourself, you can do it like this:
+
+    ``` bash
+    wget ftp://ftp.cephb.fr/hgdp_supp10/*
+    tar -xzvf Harvard_HGDP-CEPH.tgz
+    ```
+    `wget` is the non-interactive network downloader which is used to download files from the server even when the user has not logged on to the system and it can work in the background without hindering the current process.
+
+    A **tarball** is a group of files that are kept together using the `tar` command. Tarballs are common file formats on Linux operating systems, and they are often used for distribution of software/media or backup purposes. Typically they have `.tar` extension, while compressed `.tar` files have `.tgz` or `.tar.gz` extension.
 
 For all data manipulation, such as extracting certain SNPs, chromosomes, individuals, merging datasets, removing SNPs in high LD, filtering out low quality genotypes, and many others we will use [plink](https://www.cog-genomics.org/plink2).
