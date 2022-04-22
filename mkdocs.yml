@@ -33,6 +33,7 @@ nav:
     - Plink:                    03_plink.md
     - Multivariate analysis:    04_MDS_and_PCA.md
     - Admixture:                05_admixture.md
+    - fastStructure:            05_fastStructure.md
     - Reference:                06_reference.md
 
 plugins:
