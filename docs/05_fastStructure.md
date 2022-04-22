@@ -83,24 +83,24 @@ This generates a `hgdp_pruned_chr8.2.log` file that tracks how the algorithm pro
 
 ### Identify the best value of K / Choosing model complexity STOPED HERE
 
-In order to choose the appropriate number of model components that explain structure in the dataset, it is recommend running the algorithm for multiple choices of K. Creators of fastStructure have provided a utility tool to parse through the output of these runs and provide a reasonable range of values for the model complexity appropriate for a dataset of interest.
+In order to choose the appropriate number of model components that explain structure in the dataset, it is recommend to run the algorithm for multiple choices of K. Creators of fastStructure have provided a utility tool to parse through the output of these runs and provide a reasonable range of values for the model complexity appropriate for a dataset of interest.
 
-Assuming the algorithm was run on the test dataset for choices of K ranging from 1 to 10, and the output flag was `--output=test/testoutput_simple`, you can obtain the model complexity by doing the following:
+Assuming that the algorithm was run on the test dataset for choices of K ranging from 2 to 4, and the output flag was `--output=out/hgdp_pruned_chr8_output`, you can obtain the model complexity by doing the following:
 
 ``` bash
-$ python chooseK.py --input=test/testoutput_simple
-Model complexity that maximizes marginal likelihood = 2
-Model components used to explain structure in data = 4
+$ python fs/chooseK.py --input=out/hgdp_pruned_chr8
+Model complexity that maximizes marginal likelihood = 4
+Model components used to explain structure in data = 2
 ```
 
 ***********************************************************************************
 
 ### Plotting results (has to be done with ssh -X) / Visualizing admixture proportions
 
-In order to visualize the expected admixture proportions inferred by fastStructure, we have provided a simple tool to generate Distruct plots using the mean of the variational posterior distribution over admixture proportions. The samples in the plot will be grouped according to population labels inferred by fastStructure. However, if the user would like to group the samples according to some other categorical label (e.g., geographic location), these labels can be provided as a separate file using the flag --popfile. The order of labels in this file (one label per row) should match the order of samples in the input data files.
+In order to visualize the expected admixture proportions inferred by fastStructure, creators of fastStructure have provided a simple tool to generate [Distruct](https://web.stanford.edu/group/rosenberglab/distruct.html) plots using the mean of the variational posterior distribution over admixture proportions. The samples in the plot will be grouped according to population labels inferred by fastStructure. However, if the user would like to group the samples according to some other categorical label (e.g., geographic location), these labels can be provided as a separate file using the flag --popfile. The order of labels in this file (one label per row) should match the order of samples in the input data files.
 
 ``` bash
-$ python distruct.py
+$ python fs/distruct.py
 
 Here is how you can use this script
 
@@ -112,14 +112,14 @@ Usage: python distruct.py
      --title=<figure title>  (a title for the figure; optional)
 ```
 
-Assuming the algorithm was run on the test dataset for K=5, and the output flag was --output=test/testoutput_simple, you can generate a Distruct plot by doing the following:
+Assuming the algorithm was run on the `hgdp_pruned_chr8` dataset for K=2, and the output flag was `--output=out/hgdp_pruned_chr8_output`, you can generate a Distruct plot by doing the following:
 
 ``` bash
-python distruct.py -K 5 --input=test/testoutput_simple --output=test/testoutput_simple_distruct.svg
+python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8.svg
 ```
 
 Assuming that we logged in to `evop-login` with `ssh -X` we can open the `.svg` file like this:
 ```
-display testoutput_simple_distruct.svg
+display out/hgdp_pruned_chr8.svg
 ```  
 Alternatively, you can download the file to your local computer and ispect it there.
