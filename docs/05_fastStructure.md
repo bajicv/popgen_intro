@@ -2,6 +2,12 @@
 
 [fastStructure](https://rajanil.github.io/fastStructure/#:~:text=fastStructure%20is%20an%20algorithm%20for,x.) is an algorithm for inferring population structure from large SNP genotype data. It is based on a variational Bayesian framework for posterior inference and is written in Python2.x. It can use input files in `plink` format (bed, bim and fam files for the dataset should all be present in the same path).
 
+<center>
+![fastStructure vs ADMIXTURE](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/genetics/197/2/10.1534_genetics.114.164350/7/573fig6.jpeg?Expires=1653907047&Signature=UdlWrwbeOsw6eDi9noF58JM7TpDqZL84QOiKgJQ1hnn9M6oqB7w2KP8zvdvH44ZCDONvH5r07D9vdYy8abgn8VKRDmgpXpSfEbDiC3rX5sLk7-d6RLpzq~MYILmsvQD2m7OIb--ooU~~jsy78TAAuFuwS-vwxpzI7SH0zU3RELc6UW0ZjdM7YwJtXtfT59gxmJibhiM7y1HsUgYxn4WqvQH-fJI-23eya3Aeuv83AJ7~ehEyNdSLXSEjrT2VrDSxlx6aRaTnfBVoIbLrAXtscwC2P6~XCcyqjsADoSy~E2vIILCI3HEEpRip-i2gVh0yElIz4wzyQ051-FywcCgzzQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)
+
+_Frigure from: [Raj, Anil, Matthew Stephens, and Jonathan K. Pritchard. "fastSTRUCTURE: variational inference of population structure in large SNP data sets." Genetics 197.2 (2014): 573-589.](https://academic.oup.com/genetics/article/197/2/573/6074271)_
+</center>
+
 ***********************************************************************************
 
 ### Pruning
@@ -63,29 +69,26 @@ Usage: python structure.py
 
 ***********************************************************************************
 
-#### Main options
-
 The key options to pass to the scripts are the __input file__, __the output file__ and __the number of populations__. 
 
 Assuming the input file is named `hgdp_pruned_chr8.bed` (with corresponding `hgdp_pruned_chr8.fam` and `hgdp_pruned_chr8.bim`), the output file is named `hgdp_pruned_chr8_output` and the number of populations you would like is `2`, you can run the algorithm as follows:
 
-!!! note
-    The input file names should **not** include suffixes (e.g., `.bed`) and are relative to the main project directory (unless a full path is provided).
-
 ``` bash
-python fs/structure.py -K 2 --input=../plink_exercise/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8_output
+python fs/structure.py -K 2 --input=../plink_exercise/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8
 
 ```
+!!! note
+    The input file names should **not** include suffixes (e.g., `.bed`) and are relative to the main project directory (unless a full path is provided).
 
 This generates a `hgdp_pruned_chr8.2.log` file that tracks how the algorithm proceeds, and files `hgdp_pruned_chr8.2.meanQ` and `hgdp_pruned_chr8.2.meanP` containing the posterior mean of admixture proportions and allele frequencies, respectively. The orders of samples and SNPs in the output files match those in the `.fam` file and `.bim` file, respectively. 
 
 ***********************************************************************************
 
-### Identify the best value of K / Choosing model complexity STOPED HERE
+### Choosing model complexity
 
-In order to choose the appropriate number of model components that explain structure in the dataset, it is recommend to run the algorithm for multiple choices of K. Creators of fastStructure have provided a utility tool to parse through the output of these runs and provide a reasonable range of values for the model complexity appropriate for a dataset of interest.
+In order to identify the best value of K ( i.e. to choose the appropriate number of model components) that explain structure in the dataset, it is recommend to run the algorithm for multiple choices of K. Creators of fastStructure have provided a utility tool to parse through the output of these runs and provide a reasonable range of values for the model complexity appropriate for a dataset of interest.
 
-Assuming that the algorithm was run on the test dataset for choices of K ranging from 2 to 4, and the output flag was `--output=out/hgdp_pruned_chr8_output`, you can obtain the model complexity by doing the following:
+Assuming that the algorithm was run on the test dataset for choices of K ranging from 2 to 4, and the output flag was `--output=out/hgdp_pruned_chr8`, you can obtain the model complexity by doing the following:
 
 ``` bash
 $ python fs/chooseK.py --input=out/hgdp_pruned_chr8
@@ -95,9 +98,12 @@ Model components used to explain structure in data = 2
 
 ***********************************************************************************
 
-### Plotting results (has to be done with ssh -X) / Visualizing admixture proportions
+### Visualizing admixture proportions
 
-In order to visualize the expected admixture proportions inferred by fastStructure, creators of fastStructure have provided a simple tool to generate [Distruct](https://web.stanford.edu/group/rosenberglab/distruct.html) plots using the mean of the variational posterior distribution over admixture proportions. The samples in the plot will be grouped according to population labels inferred by fastStructure. However, if the user would like to group the samples according to some other categorical label (e.g., geographic location), these labels can be provided as a separate file using the flag --popfile. The order of labels in this file (one label per row) should match the order of samples in the input data files.
+!!! note
+    If you would like to visualize results stored at evop-login you have to ssh with `-X` option.
+
+In order to visualize the expected admixture proportions inferred by fastStructure, creators of fastStructure have provided a simple tool to generate [Distruct](https://web.stanford.edu/group/rosenberglab/distruct.html) plots using the mean of the variational posterior distribution over admixture proportions. The samples in the plot will be grouped according to population labels inferred by fastStructure. However, if the user would like to group the samples according to some other categorical label (e.g., geographic location), these labels can be provided as a separate file using the flag `--popfile`. The order of labels in this file (one label per row) should match the order of samples in the input data files.
 
 ``` bash
 $ python fs/distruct.py
@@ -112,28 +118,32 @@ Usage: python distruct.py
      --title=<figure title>  (a title for the figure; optional)
 ```
 
-Assuming the algorithm was run on the `hgdp_pruned_chr8` dataset for K=2, and the output flag was `--output=out/hgdp_pruned_chr8_output`, you can generate a Distruct plot by doing the following:
+Assuming the algorithm was run on the `hgdp_pruned_chr8` dataset for K=2, and the output flag was `--output=out/hgdp_pruned_chr8`, you can generate a Distruct plot by doing the following:
 
 ``` bash
-python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8.svg
+python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8_K2.svg
 ```
 
 Assuming that we logged in to `evop-login` with `ssh -X` we can open the `.svg` file like this:
 ```
 display out/hgdp_pruned_chr8.svg
 ```  
+
 Alternatively, you can download the file to your local computer and ispect it there.
 
 
-We would still like to change the default population labels. To do so we can provide distruct with `--popfile` in which we specify population labels for each individual. You can find this information in .fam file in which I added in first column infomation about population for each individual. 
+We would still like to change the default population labels. To do so we can provide distruct with `--popfile` in which we specify population labels for each individual. You can find this information in `.fam` file in which I added in first column infomation about population for each individual. 
 
 !!! note "Task"
-    Extract first column from `.fam` file and save it in separate file.
+    a) Extract first column from `.fam` file and save it in separate file.<br />
+    b) Make a new plot using labels from newly created file.
 
-    ??? note "Hint"
-        Try doing it with `awk` or `cut`
+    ??? note "Hints"
+        a) Try doing it with `awk` or `cut`<br />
+        b) Use `--popfile` option in `distruct.py`
 
-    ??? note "Click for answer"
+    ??? note "Click for answers"
+        a) Extract first column from `.fam` file and save it in separate file.
         ``` bash
         cd ~/popgen_intro/fastStructure
 
@@ -144,6 +154,22 @@ We would still like to change the default population labels. To do so we can pro
         awk '{print $1}' ../plink_exercise/hgdp_4_fastStructure.fam > pop_labels.txt
         ```
 
-``` bash
-python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --popfile=pop_labels.txt --output=out/hgdp_pruned_chr8_pop_labels.svg
-```
+        b) Make a new plot using labels from newly created file.
+        ``` bash
+        python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --popfile=pop_labels.txt --title="HGDP chr8 K=2" --output=out/hgdp_pruned_chr8_K2_pop_labels.svg
+        ```
+
+
+??? note "Click to see plots"
+    
+    ![k2](pics/hgdp_pruned_chr8_K2_pop_labels.svg) 
+
+
+    ![k3](pics/hgdp_pruned_chr8_K3_pop_labels.svg) 
+
+
+    ![k4](pics/hgdp_pruned_chr8_K4_pop_labels.svg) 
+
+
+!!! tip
+    Plotting `fastStructure` results with `distruct` can be tricky when many K's and runs are present. One can use [PONG](https://github.com/ramachandran-lab/pong) to visualize multiple runs and Ks from fastStructure or ADMIXTURE. PONG takes care of the colors across different Ks and order of individuals and populations for us. It's great and I highly recommend it. :) 

@@ -65,14 +65,12 @@ cd ~/popgen_intro
 
 `Harvard_HGDP-CEPH` directory contains several files explained in `8_12_2011_Harvard_HGDP_readme.txt`. 
 
-- `all_snp.ped` and `all_snp.map`<br />
-  are in the `plink` format (used by software such as `ADMIXTURE`, `TreeMix`, and many others). These two files are _"connected"_ and they should be always processed together. So be sure that you keep them in the same directory and that they have the same name with only difference in their file extension name.
 
-- `sample_all_snp.txt`<br /> 
-  contains a list of individuals their sex and populations to which they belong.
-
-- `HGDP_metainformation.txt` 
-  is a file in which I collected the meta-information on each of the samples which might be useful for population genetic research, data interpretation, and/or data visualization (e.g. country or origin, longitude, latitude, language...).
+| File(s) | Description |
+|---|---|
+| `all_snp.ped` and <br />`all_snp.map` | These two files are in the `plink` format (used by software such as `fastStructure`, `ADMIXTURE`, `TreeMix`, and many others). <br />They are _"connected"_ and they should be always processed together. <br />So be sure that you keep them in the same directory and that they have the same name with only difference in their file extension name. <br />These files contain only 10% of randomly chosen SNPs (with option `--thin 0.1` in plink) from the original file that was downloaded from HGDP-CEPH webpage. <br />This was done to ensure that we are not using too much memory on the evop-login server and to make sure that we will finish exercises on time ;) |
+| `sample_all_snp.txt` | Contains a list of individuals their sex and populations to which they belong. |
+| `HGDP_metainformation.txt` | A file in which I collected the meta-information on each of the samples which might be useful for population genetic research, <br />data interpretation, and/or data visualization (e.g. country or origin, longitude, latitude, language...). |
 
 !!! note
 
@@ -86,12 +84,5 @@ cd ~/popgen_intro
 
     A **tarball** is a group of files that are kept together using the `tar` command. Tarballs are common file formats on Linux operating systems, and they are often used for distribution of software/media or backup purposes. Typically they have `.tar` extension, while compressed `.tar` files have `.tgz` or `.tar.gz` extension.
 
-For all data manipulation, such as extracting certain SNPs, chromosomes, individuals, merging datasets, removing SNPs in high LD, filtering out low quality genotypes, and many others we will use [plink](https://www.cog-genomics.org/plink2).
+For all data manipulation, such as extracting certain SNPs, chromosomes, individuals, merging datasets, removing SNPs in high LD, filtering out low-quality genotypes, and many others we will use [plink](https://www.cog-genomics.org/plink2). 
 
-
-
-| File(s) | Description |
-|---|---|
-| `all_snp.ped` and <br />`all_snp.map` | These two files are in the `plink` format (used by software such as `ADMIXTURE`, `TreeMix`, and many others). <br />They are _"connected"_ and they should be always processed together. <br />So be sure that you keep them in the same directory and that they have the same name with only difference in their file extension name. |
-| `sample_all_snp.txt` | Contains a list of individuals their sex and populations to which they belong. |
-| `HGDP_metainformation.txt` | A file in which I collected the meta-information on each of the samples which might be useful for population genetic research, data interpretation, and/or data visualization (e.g. country or origin, longitude, latitude, language...). |

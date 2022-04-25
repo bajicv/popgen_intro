@@ -1,9 +1,8 @@
-
 # Plink
 
-We will be working with `plink`, a free, open-source whole-genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner. Even though the focus of `plink` is  on analysis of genotype/phenotype data, it is widely used in popgen as it has many features for data manipulation, it offers basic statistics, and many popgen tools assume input files to be in plink format (e.g. `ADMIXTURE`).
+We will be working with `plink`, a free, open-source whole-genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner. Even though the focus of `plink` is  on analysis of genotype/phenotype data, it is widely used in popgen as it has many features for data manipulation, it offers basic statistics, and many popgen tools assume input files to be in plink format (e.g. `fastStructure`, `ADMIXTURE`, etc.).
 
-[Plink](https://www.cog-genomics.org/plink/1.9/) is a tool created for genome-wide association studies (GWAS) and research in population genetics. `Plink` parses each command line as a collection of flags (each of which starts with two dashes), plus parameters (which immediately follow a flag). Because Plink was developed for GWAS medical studies, many statistics and pieces of information from plink files will be not used in our analysis, such as pedigree or phenotype.
+[Plink](https://www.cog-genomics.org/plink/1.9/) is a tool created for genome-wide association studies ([GWAS](https://www.genome.gov/genetics-glossary/Genome-Wide-Association-Studies#:~:text=A%20genome%2Dwide%20association%20study,the%20presence%20of%20a%20disease.)) and research in population genetics. `Plink` parses each command line as a collection of flags (each of which starts with two dashes), plus parameters (which immediately follow a flag). Because Plink was developed for GWAS medical studies, many statistics and pieces of information from plink files will be not used in our analysis, such as pedigree or phenotype.
 
 *********************************************************************
 
@@ -40,107 +39,67 @@ Analysis using __covariates__ often requires the fourth file, containing the val
 
 ## Basic statistics with plink
 
-We can generate some simple summary statistics using `plink` e.g. rates of missing data in the file, diversity within and between the samples.
+We can generate some simple summary statistics using `plink` e.g. rates of missing data in the file, diversity within and between the samples, etc.
 
 Before we start our exercises let's make binary files out of our text-format plink files and output them in `~/popgen_intro/plink_exercise/`:
 
-``` title="R"
+``` bash
 cd ~/popgen_intro
+mkdir plink_exercise
 plink1.9 --file all_snp --make-bed --out ~/popgen_intro/plink_exercise/hgdp
 ```
-??? note "Click to see the output"
-    ``` bash
-    PLINK v1.90b6.6 64-bit (12 Oct 2018)           www.cog-genomics.org/plink/1.9/
-    (C) 2005-2018 Shaun Purcell, Christopher Chang   GNU General Public License v3
-    Logging to /home/bajiv90/popgen_intro/plink_exercise/hgdp.log.
-    Options in effect:
-      --file all_snp
-      --make-bed
-      --out /home/bajiv90/popgen_intro/plink_exercise/hgdp
-
-    16042 MB RAM detected; reserving 8021 MB for main workspace.
-    .ped scan complete (for binary autoconversion).
-    Performing single-pass .bed write (627719 variants, 942 people).
-    --file: /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.bed +
-    /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.bim +
-    /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.fam written.
-    627719 variants loaded from .bim file.
-    942 people (621 males, 321 females) loaded from .fam.
-    Using 1 thread (no multithreaded calculations invoked).
-    Before main variant filters, 942 founders and 0 nonfounders present.
-    Calculating allele frequencies... done.
-    Warning: 3 het. haploid genotypes present 
-    (see /home/bajiv90/popgen_intro/plink_exercise/hgdp.hh ); 
-    many commands treat these as missing.
-    Warning: Nonmissing nonmale Y chromosome genotype(s) present; 
-    many commands treat these as missing.
-    Total genotyping rate is 0.995272.
-    627719 variants and 942 people pass filters and QC.
-    Note: No phenotypes present.
-    --make-bed to /home/bajiv90/popgen_intro/plink_exercise/hgdp.bed +
-    /home/bajiv90/popgen_intro/plink_exercise/hgdp.bim +
-    /home/bajiv90/popgen_intro/plink_exercise/hgdp.fam ... done.
-    ```
 
 Now go to `plink_exercise` and check which files are there:
 
 ``` bash
-cd ~/popgen_intro/plink_exercise/
-ls 
+$ cd ~/popgen_intro/plink_exercise/
+$ ls
+
+hgdp.bed  hgdp.bim  hgdp.fam  hgdp.log 
 ```
 
-??? note "Click to see the output"
-    ``` bash
-    hgdp.bed  hgdp.bim  hgdp.fam  hgdp.hh  hgdp.log
-    ```
-
-As expected we got 3 files that go together in binary file format in `plink` (i.e. `bed` + `bim` + `fam`), but also two more files `hh` and `log`. Let's take a look at them:
+As expected we got 3 files that go together in binary file format in `plink` (i.e. `bed` + `bim` + `fam`), but also `log`. Let's take a look at it:
 
 ``` bash
-head hgdp.hh hgdp.log
+$ cat hgdp.log
+
+PLINK v1.90b6.6 64-bit (12 Oct 2018)
+Options in effect:
+  --file all_snp
+  --make-bed
+  --out /home/bajiv90/popgen_intro/plink_exercise/hgdp
+
+Hostname: evop-login
+Working directory: /home/bajiv90/popgen_intro
+Start time: Mon Apr 25 18:19:33 2022
+
+Random number seed: 1650903573
+16042 MB RAM detected; reserving 8021 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (62679 variants, 942 people).
+--file: /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.bed +
+/home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.bim +
+/home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.fam written.
+62679 variants loaded from .bim file.
+942 people (621 males, 321 females) loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 942 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.995297.
+62679 variants and 942 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to /home/bajiv90/popgen_intro/plink_exercise/hgdp.bed +
+/home/bajiv90/popgen_intro/plink_exercise/hgdp.bim +
+/home/bajiv90/popgen_intro/plink_exercise/hgdp.fam ... done.
+
+End time: Mon Apr 25 18:19:35 2022
 ```
-??? note "Click to see the output"
-    ``` bash
-    ==> hgdp.hh <==
-    HGDP00199       HGDP00199       Affx-50065401
-    HGDP00259       HGDP00259       Affx-50065401
-    HGDP00281       HGDP00281       Affx-50065401
 
-    ==> hgdp.log <==
-    PLINK v1.90b6.6 64-bit (12 Oct 2018)
-    Options in effect:
-      --file all_snp
-      --make-bed
-      --out /home/bajiv90/popgen_intro/plink_exercise/hgdp
+`plink` by default creats `.log` file with information on how linked `bed`, `bim`, `fam` or `map` and `ped` files were created. This is very useful when trying to understand your own work after some time, or understanding the steps of your collaborators.
 
-    Hostname: evop-login
-    Working directory: /home/bajiv90/popgen_intro/
-    Start time: Thu Apr 30 11:06:36 2020
-
-    Random number seed: 1588237596
-    16042 MB RAM detected; reserving 8021 MB for main workspace.
-    Scanning .ped file... done.
-    Performing single-pass .bed write (627719 variants, 942 people).
-    --file: /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.bed +
-    /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.bim +
-    /home/bajiv90/popgen_intro/plink_exercise/hgdp-temporary.fam written.
-    627719 variants loaded from .bim file.
-    942 people (621 males, 321 females) loaded from .fam.
-    Using 1 thread (no multithreaded calculations invoked).
-    ```
-
-`plink` created `.hh` file to tell us that there is an issue with heterozygous haploid and nonmale Y chromosome genotype calls. If we take a better look at `.log` file we will see that there is a short explanation for files that were created, so for `hh` we can find this: 
-``` bash
-Warning: 3 het. haploid genotypes present 
-(see /home/bajiv90/popgen_intro/plink_exercise/hgdp.hh ); 
-many commands treat these as missing.
-Warning: Nonmissing nonmale Y chromosome genotype(s) present; 
-many commands treat these as missing.
-```
-In our case, there are only 3 SNPs in total that are problematic and we can just exclude them from further analysis if we would be interested in Y chromosome. But we will focus our analysis on autosomes and X chromosome, so no need to bother with those for now. See [plink webpage](https://www.cog-genomics.org/plink/1.9/data) for more ideas on how to deal with issues like this. 
-
-
-We can include population names as family ID (FID) so we can have an idea where to which population individuals belong. We can get this information from the metainformation file that we have in `~/popgen_intro/HGDP_metainformation.txt`. To do so we should first make a file with old and new IID and FID, and then making new plink files with updated IDs:
+We can include population names as family ID (FID) so we can have an idea to which population each individual belongs. We can get this information from the metainformation file that we have in `~/popgen_intro/HGDP_metainformation.txt`. To do so we should first make a file with old and new IID and FID, and then make new plink files with updated IDs (`--update-ids`):
 
 ``` bash
 cd ~/popgen_intro/plink_exercise/
@@ -148,13 +107,9 @@ cd ~/popgen_intro/plink_exercise/
 join -j 1 -o 1.1,1.2,2.2,2.1 <(sort -k1 hgdp.fam) <(sort -k1 ../HGDP_metainformation.txt) > hgdp_updateIDs.txt
 
 plink1.9 --bfile hgdp --update-ids hgdp_updateIDs.txt --make-bed --out hgdp_newFIDs
-
 ```
 
-
-
-!!! tip 
-    __Process Substitution__<br /><br />
+!!! tip "__Tip: Process Substitution__"
     __Piping__ (`|`) the stdout of a command into the stdin of another is a powerful technique. But, what if we need to pipe the stdout of multiple commands? This is where __process substitution__ (`<(command)` or `>(command)`) comes in.
 
     Process substitution feeds the output of a process (or processes) into the stdin of another process. In other words process substitution treats the output (or input) of commands as files. 
@@ -170,7 +125,8 @@ plink1.9 --bfile hgdp --update-ids hgdp_updateIDs.txt --make-bed --out hgdp_newF
 
 ### Missing data
 
-We can use `--missing` to produces __sample-based__ (`.imiss`) and __variant-based__ (`lmiss`) missing data reports.
+We can use `--missing` to produces __sample-based__ (`.imiss`) and __variant-based__ (`.lmiss`) files with missing data reports.
+
 ``` bash
 cd ~/popgen_intro/plink_exercise/
 
@@ -179,68 +135,58 @@ plink1.9 --bfile hgdp_newFIDs --missing --out hgdp_newFIDs_miss
 
 Now, we can visualize the data in __R__. Let's download newly created files together with the metainformation file to our local machine, and then run the following R commands to plot them:
 
-```{r plot_miss, eval=T, echo=T, fig.width=20, fig.align='center'}
+``` R
+# load necessary packages
+library("tidyverse")
 
-# Loading necessary packages
-library(data.table)
-library(dplyr)
+# load files
+indINFO   <- read_table("HGDP_metainformation.txt", col_types = "cffffddffffffiii")
+imiss     <- read_table("hgdp_newFIDs_miss.imiss", col_types = "fcfiid")
+lmiss     <- read_table("hgdp_newFIDs_miss.lmiss", col_types = "fciid")
 
-# Specifying path to directory and loading files
-setwd("~/Nowick_Lab/Master_course_Bioinformatics_for_Biologists/SoSe2020/popge_intro/")
-indINFO <- fread("HGDP_metainformation.txt")
-imiss <- fread("hgdp_newFIDs_miss.imiss")
-lmiss <- fread("hgdp_newFIDs_miss.lmiss")
-
-# to vlookup to indINFO table 
+# add metainformation to imiss
 imiss <- left_join(imiss, indINFO, by="IID")
 
-# Preparing to plot Missingness boxplots per population
-# First ordering the populations based on region and color so that they appear like that on the boxplot
-ordered_imiss <- imiss[order(imiss$Region, imiss$Country, imiss$FID),]
-imiss$FID <- factor(imiss$FID, levels = unique(ordered_imiss$FID))
+# order levels for FID to be ordered by Region, Country and FID
+imiss$FID <- factor(imiss$FID, levels = unique(imiss[order(imiss$Region, imiss$Country, imiss$FID),]$FID))
 
 # ploting boxplots per population colored by region
-library("ggplot2")
-ggplot(imiss, aes(x=FID, y=F_MISS, fill=Region)) + 
+imiss %>% 
+  ggplot(aes(x=FID, y=F_MISS, fill=Region)) + 
   geom_boxplot() + 
   theme(axis.text.x = element_text(angle = 90))
 
 # Let's keep only modern human populations
-imiss_sub <- filter(imiss, !FID %in% c("Href","Clint","Denisova", "Gorilla","Macaque","Marmoset","Orang","Vindija"))
-
 # and plot it again so we can see better which of modern populations has a lot of individuals that are missing a lot of data
-ggplot(imiss_sub, aes(x=FID, y=F_MISS, fill=Region)) + 
+imiss %>% 
+  filter(!FID %in% c("Href","Clint","Denisova", "Gorilla","Macaque","Marmoset","Orang","Vindija")) %>% 
+  ggplot(aes(x=FID, y=F_MISS, fill=Region)) + 
   geom_boxplot() + 
   theme(axis.text.x = element_text(angle = 90))
 
-# Preparing to plot histograms of Missingness per Chromosome
-# First we will reorder factors so chromosomes on the x-axis are displayed in proper order
-library(forcats)
-lmiss$CHR <- as.factor(lmiss$CHR)
-lmiss$CHR <- fct_relevel(lmiss$CHR, function(x){as.character(sort(as.integer(x)))})
-
-ggplot(lmiss, aes(x=CHR, y=F_MISS, fill=CHR)) + 
+# Plot histograms of Missingness per Chromosome
+lmiss %>% 
+  ggplot(aes(x=CHR, y=F_MISS, fill=CHR)) + 
   geom_boxplot() +
   theme(legend.position = "none")
 
 # Now let's see only those that have F_MISS < 0.1
-lmiss_sub <- filter(lmiss, F_MISS < 0.1)
-lmiss_sub$CHR <- as.factor(lmiss_sub$CHR)
-
-ggplot(lmiss_sub, aes(x=CHR, y=F_MISS, fill=CHR)) + 
+lmiss %>% 
+  filter(F_MISS < 0.1) %>% 
+  ggplot(aes(x=CHR, y=F_MISS, fill=CHR)) + 
   geom_boxplot() +
   theme(legend.position = "none")
-  
 ```
 
 
 Now, let's keep only individuals from modern populations, and remove SNPs and individuals with more than 10% missingness. To do so, we will need to specify which individuals we want to keep (with option `--keep`) or remove (with option `--remove`). One way to make list of individuals which we want to keep is to find all individuals that contain "HGDP" in their name.
+
 ``` bash
 grep HGDP hgdp_newFIDs.fam > ind_keep.txt
 plink1.9 --bfile hgdp_newFIDs --make-bed --mind 0.1 --geno 0.1 --keep ind_keep.txt --out hgdp_newFIDs_modernPops_MindGeno
 ```
-
-How many individuals and how many SNPs were removed?
+!!! question
+    How many individuals and how many SNPs were removed?
 
 
 ***************************************************************************

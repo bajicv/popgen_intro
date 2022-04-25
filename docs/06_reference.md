@@ -25,3 +25,4 @@ And various other sources:
 - https://www.nature.com/articles/s10038-020-00862-1
 - https://www.ncbi.nlm.nih.gov/snp/
 - Marees, Andries T., et al. "A tutorial on conducting genome-wide association studies: Quality control and statistical analysis." International journal of methods in psychiatric research 27.2 (2018): e1608.
+- [Raj, Anil, Matthew Stephens, and Jonathan K. Pritchard. "fastSTRUCTURE: variational inference of population structure in large SNP data sets." Genetics 197.2 (2014): 573-589.](https://academic.oup.com/genetics/article/197/2/573/6074271)
