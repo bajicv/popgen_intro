@@ -123,3 +123,27 @@ Assuming that we logged in to `evop-login` with `ssh -X` we can open the `.svg` 
 display out/hgdp_pruned_chr8.svg
 ```  
 Alternatively, you can download the file to your local computer and ispect it there.
+
+
+We would still like to change the default population labels. To do so we can provide distruct with `--popfile` in which we specify population labels for each individual. You can find this information in .fam file in which I added in first column infomation about population for each individual. 
+
+!!! note "Task"
+    Extract first column from `.fam` file and save it in separate file.
+
+    ??? note "Hint"
+        Try doing it with `awk` or `cut`
+
+    ??? note "Click for answer"
+        ``` bash
+        cd ~/popgen_intro/fastStructure
+
+        # To extract first column with cut and save it in new file
+        cut -f1 -d" " ../plink_exercise/hgdp_4_fastStructure.fam > pop_labels.txt
+
+        # To extract first column with awk and save it in new file
+        awk '{print $1}' ../plink_exercise/hgdp_4_fastStructure.fam > pop_labels.txt
+        ```
+
+``` bash
+python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --popfile=pop_labels.txt --output=out/hgdp_pruned_chr8_pop_labels.svg
+```
