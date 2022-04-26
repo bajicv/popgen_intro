@@ -82,6 +82,18 @@ python fs/structure.py -K 2 --input=../plink_exercise/hgdp_pruned_chr8 --output=
 
 This generates a `hgdp_pruned_chr8.2.log` file that tracks how the algorithm proceeds, and files `hgdp_pruned_chr8.2.meanQ` and `hgdp_pruned_chr8.2.meanP` containing the posterior mean of admixture proportions and allele frequencies, respectively. The orders of samples and SNPs in the output files match those in the `.fam` file and `.bim` file, respectively. 
 
+
+!!! task
+    Create a for loop that will execute fastStructure for K values from 2 to 9.
+    
+    ??? task "Click for answer"
+        ```
+        for k in 6 7 8 9 
+        do
+        python fs/structure.py -K $k --input=../plink_exercise/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8
+        done
+        ```
+
 ***********************************************************************************
 
 ### Choosing model complexity
