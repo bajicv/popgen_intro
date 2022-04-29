@@ -1,13 +1,11 @@
 # SNP arrays
 
-![type:video](https://www.youtube.com/embed/lVG04dAAyvY)
-
 [SNP array](https://en.wikipedia.org/wiki/SNP_array) is a type of DNA microarray containing designed probes harboring the SNP positions, which is hybridized with fragmented DNA to determine the specific alleles of all SNPs on the array for the hybridized DNA sample. 
 SNP arrays can be used to detect polymorphisms within a population. 
 
 In order to create an SNP array, it is necessary to know where are the variable sites in the human genome. This knowledge comes from several big projects that sequenced entire human genomes from different human populations (e.g. HapMap, 1K Genome Project, HGDP, etc.) . Once SNPs and sequences around them were known it was possible to design SNP arrays that would capture only positions in which humans differ from each other. SNP genotyping is much cheaper than sequencing the entire human genomes, and thus it allows us to look into more individuals. 
 
-Many companies nowadays offer different genomewide SNP chips. Here we will get familiar with Illumina microarray technology (also known as BeadArray technology) which uses silica microbeads. On the surface of each array, or BeadChip, hundreds of thousands to millions of genotypes for a single individual can be assayed at once. These tiny silica beads are housed in carefully etched microwells and coated with multiple copies of an oligonucleotide probe targeting a specific locus in the genome.
+Many companies nowadays offer different genomewide SNP chips. Here we will get familiar with [Illumina microarray technology](https://www.youtube.com/embed/lVG04dAAyvY) (also known as BeadArray technology) which uses silica microbeads. On the surface of each array, or BeadChip, hundreds of thousands to millions of genotypes for a single individual can be assayed at once. These tiny silica beads are housed in carefully etched microwells and coated with multiple copies of an oligonucleotide probe targeting a specific locus in the genome.
 
 ![Illumina beads](https://www.illumina.com/content/dam/illumina-marketing/images/science/v2/web-graphic/multi-sample-array-formats-web-graphic.jpg)
 
