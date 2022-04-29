@@ -38,54 +38,60 @@ library("tidyverse")
 indINFO   <- read_table("HGDP_metainformation.txt", col_types = "cffffddffffffiii")
 
 eigenvec <- read_table("hgdp_newFIDs_modernPops_MindGeno_PCA.eigenvec", 
-                       col_names = c("FID","IID", paste("PCA",1:20, sep = "_")),
+                       col_names = c("FID","IID", paste("PC",1:20, sep = "")),
                        col_types = "fcdddddddddddddddddddd")
 
 eigenval <- read_table("hgdp_newFIDs_modernPops_MindGeno_PCA.eigenval", col_names = "Eigenval") %>% 
-  mutate(PCA = 1:20)
+  mutate(PC = 1:20)
+
+PC_x <- 1
+PC_y <- 3
 
 # Plot eigenval
 eigenval %>% 
-  ggplot(aes(x=PCA, y=Eigenval)) +
+  ggplot(aes(x=PC, y=Eigenval)) +
   geom_bar(stat="identity")
 
 # Or we can calculate proportion for each eigenval from total eigenval and plot it
+eigenval <- eigenval %>% 
+  mutate(Prop = round(Eigenval/sum(Eigenval)*100,1)) 
+
 eigenval %>% 
-  mutate(Eigenval_prop = Eigenval/sum(Eigenval)*100) %>% 
-  ggplot(aes(x=PCA, y=Eigenval_prop)) +
+  ggplot(aes(x=PC, y=Prop)) +
   geom_bar(stat="identity")
 
-# Preparing to plot PCA
-# to vlookup to indINFO table 
+# merge with indINFO table 
 pca_inf <- left_join(eigenvec, indINFO, by="IID")
 
 # Deffine shape for each population within each Region
-symbol_col <- unique(pca_inf[,c("FID","Region")])
-symbol_col$Symbol <- NA
-for (i in unique(symbol_col$Region)){
-  symbol_col[which(symbol_col$Region == i),"Symbol"] <- 1:nrow(symbol_col[which(symbol_col$Region == i),])
+shape_color <- unique(pca_inf[,c("FID","Region")]) %>% arrange(Region)
+shape_color$Region_Population <- as.factor(paste(shape_color$Region, shape_color$FID, sep = " - "))
+shape_color$Color <- c("#a6cee3","#1f78b4", "#b2df8a", "#33a02c","#fb9a99", "#e31a1c", "#fdbf6f")[shape_color$Region]
+shape_color$Shape <- NA
+for (i in unique(shape_color$Region)){
+  shape_color[which(shape_color$Region == i),"Shape"] <- 1:nrow(shape_color[which(shape_color$Region == i),])
 }
 
-# Merge with PCA dataframe
-pca_inf_shape <- left_join(pca_inf, symbol_col[,c("FID","Symbol")], by="FID")
-pca_inf_shape$Region_Population <- paste(pca_inf_shape$Region, pca_inf_shape$Population, sep = " - ")
 
-# Order dataset before plotting
-ordered_pca_inf_shape <- pca_inf_shape[order(pca_inf_shape$Region_Population),]
+# Merge with PCA dataframe
+pca_inf_shape_color <- left_join(pca_inf, shape_color[,-2], by="FID")
+
 # PCA plot with colors according to Regions and shapes as Populations
-pca_inf_shape %>% 
-  ggplot(aes(x=PCA_1, y=PCA_2)) +
+pca_inf_shape_color %>% 
+  ggplot(aes(x=unlist(.[paste0("PC", PC_x)]), y=unlist(.[paste0("PC", PC_y)]))) +
+  xlab(paste0("PC", PC_x, " (", eigenval$Prop[PC_x], "%)")) + 
+  ylab(paste0("PC", PC_y, " (", eigenval$Prop[PC_y], "%)")) +
   geom_point(aes(col=Region_Population, shape=Region_Population)) +
-  scale_colour_manual(values = c("#a6cee3","#1f78b4", "#b2df8a", "#33a02c","#fb9a99", "#e31a1c", "#fdbf6f")[as.factor(unique(ordered_pca_inf_shape[,c("Region","Region_Population")])$Region)]) +
-  scale_shape_manual(values=unique(ordered_pca_inf_shape[,c("Symbol","Region_Population")])$Symbol) +
+  scale_colour_manual(values = deframe(shape_color[,c("Region_Population","Color")])) +
+  scale_shape_manual(values = deframe(shape_color[,c("Region_Population","Shape")])) +
   theme_bw()
 ```
 
 Do you notice any outliers? Let's check other PCA's and figure out which individuals should be removed. 
-As this is well established dataset, there is already indication in `~/popgen_intro/sample_all_snp.txt`
+As this is well established dataset, there is already indication in `~/popgen_intro/sample_all_snp.txt`. Search for "discover" in name of populations to find those that should be filter out.
 
 
-!!! warning "Homework"
+!!! warning "Optional homework"
     Make a new PCA after removing the outliers.
 
     1. Make file with individuals to be removed;
