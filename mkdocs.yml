@@ -9,7 +9,6 @@ theme:
     highlightjs: true
     hljs_languages:
         - bash
-        - R
 
 # Extensions
 markdown_extensions:
@@ -24,8 +23,6 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.arithmatex:
-      generic: true
 
 # Pages  
 nav:
@@ -36,7 +33,3 @@ nav:
     - PCA:                      04_PCA.md
     - fastStructure:            05_fastStructure.md
     - Reference:                06_reference.md
-
-#extra_javascript:
-#  - https://polyfill.io/v3/polyfill.min.js?features=es6
-#  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
