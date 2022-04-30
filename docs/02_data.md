@@ -54,12 +54,11 @@ All the data that we need for the exercises are located here:
 
 We will copy them to our home directory instead of downloading them so we can save some time.
 
-``` bash
-mkdir ~/popgen_intro
-cd /opt/evop/public/BIOINFORMATICS/popgen_intro/
-cp -r HGDP_metainformation.txt Harvard_HGDP-CEPH/all_snp.* Harvard_HGDP-CEPH/sample_all_snp.txt ~/popgen_intro/
-cd ~/popgen_intro
-```
+    mkdir ~/popgen_intro
+    cd /opt/evop/public/BIOINFORMATICS/popgen_intro/
+    cp -r HGDP_metainformation.txt Harvard_HGDP-CEPH/all_snp.* Harvard_HGDP-CEPH/sample_all_snp.txt ~/popgen_intro/
+    cd ~/popgen_intro
+
 
 `Harvard_HGDP-CEPH` directory contains several files explained in `8_12_2011_Harvard_HGDP_readme.txt`. 
 
@@ -74,10 +73,9 @@ cd ~/popgen_intro
 
     If you would like to download it yourself, you can do it like this:
 
-    ``` bash
-    wget ftp://ftp.cephb.fr/hgdp_supp10/*
-    tar -xzvf Harvard_HGDP-CEPH.tgz
-    ```
+        wget ftp://ftp.cephb.fr/hgdp_supp10/*
+        tar -xzvf Harvard_HGDP-CEPH.tgz
+    
     `wget` is the non-interactive network downloader which is used to download files from the server even when the user has not logged on to the system and it can work in the background without hindering the current process.
 
     A **tarball** is a group of files that are kept together using the `tar` command. Tarballs are common file formats on Linux operating systems, and they are often used for distribution of software/media or backup purposes. Typically they have `.tar` extension, while compressed `.tar` files have `.tgz` or `.tar.gz` extension.
