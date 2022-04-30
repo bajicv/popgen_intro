@@ -54,11 +54,12 @@ All the data that we need for the exercises are located here:
 
 We will copy them to our home directory instead of downloading them so we can save some time.
 
-    mkdir ~/popgen_intro
-    cd /opt/evop/public/BIOINFORMATICS/popgen_intro/
-    cp -r HGDP_metainformation.txt Harvard_HGDP-CEPH/all_snp.* Harvard_HGDP-CEPH/sample_all_snp.txt ~/popgen_intro/
-    cd ~/popgen_intro
-
+``` bash
+mkdir ~/popgen_intro
+cd /opt/evop/public/BIOINFORMATICS/popgen_intro/
+cp -r HGDP_metainformation.txt Harvard_HGDP-CEPH/all_snp.* Harvard_HGDP-CEPH/sample_all_snp.txt ~/popgen_intro/
+cd ~/popgen_intro
+```
 
 `Harvard_HGDP-CEPH` directory contains several files explained in `8_12_2011_Harvard_HGDP_readme.txt`. 
 
@@ -72,9 +73,11 @@ We will copy them to our home directory instead of downloading them so we can sa
 !!! note
 
     If you would like to download it yourself, you can do it like this:
-
-        wget ftp://ftp.cephb.fr/hgdp_supp10/*
-        tar -xzvf Harvard_HGDP-CEPH.tgz
+    
+    ``` bash
+    wget ftp://ftp.cephb.fr/hgdp_supp10/*
+    tar -xzvf Harvard_HGDP-CEPH.tgz
+    ```
     
     `wget` is the non-interactive network downloader which is used to download files from the server even when the user has not logged on to the system and it can work in the background without hindering the current process.
 
