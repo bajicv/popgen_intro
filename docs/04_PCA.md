@@ -6,7 +6,7 @@ PCA is used to display genetic distances between a __set of individuals__, rathe
 
 For the plots of genome-wide data, the first two PCs are normally shown, but any two PCs can be plotted to search for useful information. It should be remembered that, for genome-wide analysis, although the first two PCs will represent the largest amount of variation of all PCs, they may still represent a small amount of the total variation in the dataset.
 
-![Population structure within Europe](/pics/PCA.jpeg){width=100%}
+![Population structure within Europe](https://www.researchgate.net/profile/John-Novembre/publication/264245693/figure/fig2/AS:295962284183553@1447574315970/A-statistical-summary-of-genetic-data-from-1387-Europeans-based-on-the-two-components_W640.jpg){width=100%}
 
 Population structure within Europe revealed by genome-wide SNPs. Principal component analysis of data on 197,146 SNPs in 1387 Europeans. Small colored labels represent individuals and large colored points represent median PC1 and PC2 values for each country. The inset map provides a key to the labels. The PC axes are rotated to emphasize the similarity to the geographic map of Europe _(from [Novembre J et al. 2008](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735096/))_.
 

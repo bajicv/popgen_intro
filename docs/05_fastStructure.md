@@ -141,7 +141,7 @@ Assuming that we logged in to `evop-login` with `ssh -X` we can open the `.svg` 
 display out/hgdp_pruned_chr8.svg
 ```  
 
-Alternatively, you can download the file to your local computer and ispect it there.
+Alternatively, you can download the file to your local computer and inspect it there.
 
 
 We would still like to change the default population labels. To do so we can provide distruct with `--popfile` in which we specify population labels for each individual. You can find this information in `.fam` file in which I added in first column infomation about population for each individual. 
