@@ -88,7 +88,7 @@ This generates a `hgdp_pruned_chr8.2.log` file that tracks how the algorithm pro
     
     ??? task "Click for answer"
         ```
-        for k in 6 7 8 9 
+        for k in 2 3 4 5 6 7 8 9 
         do
         python fs/structure.py -K $k --input=../plink_exercise/hgdp_pruned_chr8 --output=out/hgdp_pruned_chr8
         done
@@ -138,7 +138,7 @@ python fs/distruct.py -K 2 --input=out/hgdp_pruned_chr8 --output=out/hgdp_pruned
 
 Assuming that we logged in to `evop-login` with `ssh -X` we can open the `.svg` file like this:
 ```
-display out/hgdp_pruned_chr8.svg
+display out/hgdp_pruned_chr8_K2.svg
 ```  
 
 Alternatively, you can download the file to your local computer and inspect it there.
